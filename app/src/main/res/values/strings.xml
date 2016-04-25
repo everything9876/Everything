@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Everything</string>
+    <string name="action_settings">Settings</string>
+    <string name="error_server_connection">Server connection error\\</string>
+    <string name="error_message">Error: %1$s</string>
+    <string name="error_internet_connection">Internet connection error</string>
+    <string name="error">Error</string>
+    <string name="facebook_app_id">503144333214113</string>
+    <string name="forgot_password">Forgot password</string>
+    <string name="register">Register</string>
+    <string name="open_close_spinner_prompt">Choose figure</string>
+    <string name="calculating_areas_open_close_principle">Calculating areas - Open/Close principle</string>
+
+    <string-array name="open_close_principle_items">
+        <item>Rectangle</item>
+        <item>Circle</item>
+        <item>Triangle</item>
+    </string-array>
+</resources>

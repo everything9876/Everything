@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_id": "everything-d6de6",
+    "project_number": "397685864564",
+    "name": "Everything"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:397685864564:android:196bb88223e1b4a7",
+        "client_id": "android:com.everything",
+        "client_type": 1,
+        "android_client_info": {
+          "package_name": "com.everything",
+          "certificate_hash": []
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "397685864564-eiuh8l3nhvgvvi1016hst8kcu92uonij.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.everything",
+            "certificate_hash": "0893550048A9D5C18C7345ED481195D2AADEF609"
+          }
+        },
+        {
+          "client_id": "397685864564-cp8mp8qr340mudnp9r83gfono1ueo9r3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "cloud_messaging_service": {
+          "status": 1,
+          "apns_config": []
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "google_signin_service": {
+          "status": 2
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "client_info": [],
+  "ARTIFACT_VERSION": "1"
+}
