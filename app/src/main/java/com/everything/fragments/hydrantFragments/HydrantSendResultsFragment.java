@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.everything.FragmentsDataCollector;
 import com.everything.R;
 import com.everything.fragments.BaseFragment;
 
@@ -18,10 +19,15 @@ import com.everything.fragments.BaseFragment;
  */
 public class HydrantSendResultsFragment extends BaseFragment{
 
+    private static final String TEST = "test";
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.fragmentLayout = R.layout.hydrant_send_results_fragment;
+
+        Log.i(TEST,FragmentsDataCollector.getInstance().getUser().getLogin());
+
         return super.onCreateView(inflater,container,savedInstanceState);
     }
 

@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.everything.FragmentsDataCollector;
 import com.everything.R;
 import com.everything.fragments.BaseFragment;
 import com.everything.service.model.User;
@@ -65,6 +66,8 @@ public class LoginDataShowerFragment extends BaseFragment{
                 loggedUserTvGplus.setText(gPlusDisplayName);
             }
 
+            FragmentsDataCollector.getInstance()
+                    .setUser(user);
         }
 
         return view;

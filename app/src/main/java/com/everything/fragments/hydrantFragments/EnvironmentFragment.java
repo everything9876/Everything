@@ -10,13 +10,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.everything.FragmentsDataCollector;
 import com.everything.R;
 import com.everything.fragments.BaseFragment;
 
 /**
  * Created by Mirek on 2016-03-18.
  */
-public class EnvironmentFragment extends BaseFragment{
+public class EnvironmentFragment extends BaseFragment {
 
     @Nullable
     @Override

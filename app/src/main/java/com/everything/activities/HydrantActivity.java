@@ -2,11 +2,11 @@ package com.everything.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
 import com.everything.BaseActivity;
+import com.everything.FragmentsDataCollector;
 import com.everything.R;
 import com.everything.fragments.BaseFragment;
 import com.everything.fragments.hydrantFragments.LoginDataShowerFragment;
@@ -21,7 +21,7 @@ import com.everything.service.model.User;
 import com.facebook.login.LoginManager;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Objects;
 
 public class HydrantActivity extends BaseActivity implements BaseFragment.SwitchFragmentsListener {
 
@@ -30,7 +30,6 @@ public class HydrantActivity extends BaseActivity implements BaseFragment.Switch
     private ArrayList<BaseFragment> fragmentsList = null;
     private int fragmentsCounter = 0;
     private final LoginDataShowerFragment loginDataShowerFragment = new LoginDataShowerFragment();
-    private User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.everything.FragmentsDataCollector;
 import com.everything.R;
 import com.everything.Utils;
 import com.everything.fragments.BaseFragment;
@@ -90,6 +91,8 @@ public class OpenCloseExampleFragment extends BaseFragment {
                 ArrayList<Shape> shapes = prepareNewShapes(count, selectedItemPosition);
                 double totalArea = new AreaManager().calculateArea(shapes);
                 totalAreaValueTv.setText(String.valueOf(totalArea));
+
+                FragmentsDataCollector.getInstance().setLastResult(totalArea);
             }
         }
     }
@@ -181,14 +184,18 @@ public class OpenCloseExampleFragment extends BaseFragment {
             int width = Utils.getIntValueFromEdittext(rectWidth);
             int height = Utils.getIntValueFromEdittext(rectHeight);
 
-            addNewShape(new Rectangle(width, height));
+            Rectangle rectangle = new Rectangle(width, height);
+            FragmentsDataCollector.getInstance().setRectangle(rectangle);
+            addNewShape(rectangle);
         }
 
         @Override
         void onCircleMode() {
             int radius = Utils.getIntValueFromEdittext(circleRadius);
 
-            addNewShape(new Circle(radius));
+            Circle circle = new Circle(radius);
+            FragmentsDataCollector.getInstance().setCircle(circle);
+            addNewShape(circle);
         }
 
         @Override
@@ -196,7 +203,9 @@ public class OpenCloseExampleFragment extends BaseFragment {
             int base = Utils.getIntValueFromEdittext(triangleBase);
             int trHeight = Utils.getIntValueFromEdittext(triangleHeight);
 
-            addNewShape(new Triangle(base, trHeight));
+            Triangle triangle = new Triangle(base, trHeight);
+            FragmentsDataCollector.getInstance().setTriangle(triangle);
+            addNewShape(triangle);
         }
 
         private void addNewShape(Shape shape) {
@@ -210,7 +219,7 @@ public class OpenCloseExampleFragment extends BaseFragment {
         }
     }
 
-    class Rectangle implements Shape {
+    public class Rectangle implements Shape {
         private double width;
         private double height;
 
@@ -225,7 +234,7 @@ public class OpenCloseExampleFragment extends BaseFragment {
         }
     }
 
-    class Circle implements Shape {
+    public class Circle implements Shape {
         private double radius;
 
         public Circle(double radius) {
@@ -238,7 +247,7 @@ public class OpenCloseExampleFragment extends BaseFragment {
         }
     }
 
-    class Triangle implements Shape {
+    public class Triangle implements Shape {
         private double base;
         private double height;
 
