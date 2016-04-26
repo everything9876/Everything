@@ -40,7 +40,7 @@ public class LiskovPrinciplFakeAPIFragment extends BaseFragment {
     ApiAdapter fakeAPIAdapter = null;
     ArrayList<Computer> computers = null;
     private Parcelable state;
-
+//wefwefwef
     @Override
     public void onResume() {
         super.onResume();
