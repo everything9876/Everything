@@ -32,7 +32,6 @@ import retrofit2.Response;
  * Created by Mirek on 2016-03-18.
  */
 public class LiskovPrinciplFakeAPIFragment extends BaseFragment {
-//SOME CHNAGE
     private static final String LIST_DATA = "list_data";
     @Bind(R.id.fake_api_list_view)
     ListView fakeApiListView;
@@ -51,7 +50,7 @@ public class LiskovPrinciplFakeAPIFragment extends BaseFragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-
+//some change
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
