@@ -14,12 +14,14 @@ import com.everything.R;
 import com.everything.service.model.User;
 import com.facebook.Profile;
 
+import java.io.Serializable;
+
 import butterknife.ButterKnife;
 
 /**
  * Created by Mirek on 2016-03-18.
  */
-public class BaseFragment extends Fragment implements View.OnClickListener {
+public class BaseFragment extends Fragment implements Serializable, View.OnClickListener {
 
     private static final String BASE_FRAGMENT = "base_fragment";
     protected SwitchFragmentsListener switchFragmentsListener = null;

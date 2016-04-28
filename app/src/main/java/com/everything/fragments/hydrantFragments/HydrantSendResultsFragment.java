@@ -13,6 +13,9 @@ import android.widget.Button;
 import com.everything.FragmentsDataCollector;
 import com.everything.R;
 import com.everything.fragments.BaseFragment;
+import com.everything.service.model.Computer;
+
+import java.util.ArrayList;
 
 /**
  * Created by Mirek on 2016-03-18.
@@ -27,6 +30,7 @@ public class HydrantSendResultsFragment extends BaseFragment{
         super.fragmentLayout = R.layout.hydrant_send_results_fragment;
 
         Log.i(TEST,FragmentsDataCollector.getInstance().getUser().getLogin());
+        ArrayList<Computer> computers = FragmentsDataCollector.getInstance().getComputers();
 
         return super.onCreateView(inflater,container,savedInstanceState);
     }

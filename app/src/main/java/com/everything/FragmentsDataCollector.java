@@ -4,7 +4,10 @@ import android.graphics.drawable.shapes.Shape;
 import android.support.annotation.Nullable;
 
 import com.everything.fragments.hydrantFragments.OpenCloseExampleFragment;
+import com.everything.service.model.Computer;
 import com.everything.service.model.User;
+
+import java.util.ArrayList;
 
 /**
  * Created by Mirek on 2016-04-26.
@@ -17,6 +20,16 @@ public class FragmentsDataCollector {
     private OpenCloseExampleFragment.Rectangle rectangle;
     private OpenCloseExampleFragment.Triangle triangle;
     private OpenCloseExampleFragment.Circle circle;
+
+    public ArrayList<Computer> getComputers() {
+        return computers;
+    }
+
+    public void setComputers(ArrayList<Computer> computers) {
+        this.computers = computers;
+    }
+
+    private ArrayList<Computer> computers;
 
     private double lastResult;
 

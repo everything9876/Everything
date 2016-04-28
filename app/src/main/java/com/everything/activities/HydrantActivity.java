@@ -6,13 +6,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
 import com.everything.BaseActivity;
-import com.everything.FragmentsDataCollector;
 import com.everything.R;
 import com.everything.fragments.BaseFragment;
 import com.everything.fragments.hydrantFragments.LoginDataShowerFragment;
-import com.everything.fragments.hydrantFragments.EnvironmentFragment;
+import com.everything.fragments.hydrantFragments.GPS_Sample_Fragment;
 import com.everything.fragments.hydrantFragments.OpenCloseExampleFragment;
-import com.everything.fragments.hydrantFragments.HydrantPhotoFragment;
+import com.everything.fragments.hydrantFragments.ISPrincipleFragment;
 import com.everything.fragments.hydrantFragments.HydrantSendResultsFragment;
 import com.everything.fragments.hydrantFragments.HydrantTechnicalDetailsFragment;
 import com.everything.fragments.hydrantFragments.LiskovPrinciplFakeAPIFragment;
@@ -21,15 +20,12 @@ import com.everything.service.model.User;
 import com.facebook.login.LoginManager;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class HydrantActivity extends BaseActivity implements BaseFragment.SwitchFragmentsListener {
 
-    private static final String FRAGMENTS_LIST = "fragments_list";
     private static final String FRAGMENTS_COUNTER = "fragments_counter";
     private ArrayList<BaseFragment> fragmentsList = null;
     private int fragmentsCounter = 0;
-    private final LoginDataShowerFragment loginDataShowerFragment = new LoginDataShowerFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +41,6 @@ public class HydrantActivity extends BaseActivity implements BaseFragment.Switch
             commitFragment(fragment);
         } else {
             try {
-                fragmentsList = (ArrayList<BaseFragment>) savedInstanceState.getSerializable(FRAGMENTS_LIST);
                 fragmentsCounter = savedInstanceState.getInt(FRAGMENTS_COUNTER);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -56,17 +51,16 @@ public class HydrantActivity extends BaseActivity implements BaseFragment.Switch
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putSerializable(FRAGMENTS_LIST, fragmentsList);
         outState.putSerializable(FRAGMENTS_COUNTER,fragmentsCounter);
     }
 
     private void initFragmentsList() {
         fragmentsList = new ArrayList<BaseFragment>();
-        fragmentsList.add(loginDataShowerFragment);
+        fragmentsList.add(new LoginDataShowerFragment());
         fragmentsList.add(new OpenCloseExampleFragment());
         fragmentsList.add(new LiskovPrinciplFakeAPIFragment());
-        fragmentsList.add(new HydrantPhotoFragment());
-        fragmentsList.add(new EnvironmentFragment());
+        fragmentsList.add(new ISPrincipleFragment());
+        fragmentsList.add(new GPS_Sample_Fragment());
         fragmentsList.add(new HydrantTechnicalDetailsFragment());
         fragmentsList.add(new HydrantTechnicalCommentsFragment());
         fragmentsList.add(new HydrantSendResultsFragment());

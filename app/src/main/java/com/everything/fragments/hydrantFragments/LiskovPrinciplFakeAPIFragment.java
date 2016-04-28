@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.everything.FragmentsDataCollector;
 import com.everything.R;
 import com.everything.adapters.ApiAdapter;
 import com.everything.fragments.BaseFragment;
@@ -138,6 +139,7 @@ public class LiskovPrinciplFakeAPIFragment extends BaseFragment {
         public void onSuccess(Response response) {
             ComputersContainer computersContainer = (ComputersContainer) response.body();
             computers = computersContainer.getComputers();
+            FragmentsDataCollector.getInstance().setComputers(computers);
             setAdapterData();
         }
 
@@ -155,6 +157,8 @@ public class LiskovPrinciplFakeAPIFragment extends BaseFragment {
                             new Computer(2, "Waldemar"),
                             new Computer(3, "Jakiś inny"))
             );
+
+            FragmentsDataCollector.getInstance().setComputers(computers);
         }
     }
 
